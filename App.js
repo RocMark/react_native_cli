@@ -2,36 +2,22 @@ import React from 'react'
 
 /* Component */
 import { StyleSheet, View, Text } from 'react-native'
-import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
-
-/* Hooks */
-import { useExample } from './src/hooks/exampleHooks'
-
-/* Redux */
-import { Provider } from 'react-redux'
-import { store, persistor } from './src/store/store'
-
-// Redux Persist
-import { PersistGate } from 'redux-persist/es/integration/react'
+import TestCompo from './src/components/Test/TestCompo/TestCompo'
 
 const App = () => {
-  const exampleHooks = useExample()
   return (
-    <>
-      <Provider store={store}>
-        <PersistGate persistor={persistor} loading={null}>
-          <View style={styles.body}>
-            <Text>{`exampleHooks${JSON.stringify(exampleHooks.data)}`}</Text>
-        <Text>{'App'}</Text>
-      </View>
-          </View>
-        </PersistGate>
-      </Provider>
-    </>
+    <View style={styles.app}>
+      <TestCompo />
+    </View>
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  app: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+})
 
 export default App

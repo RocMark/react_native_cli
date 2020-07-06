@@ -26,8 +26,7 @@ const persistedReducer = persistReducer(persistConfig, allReducer)
 const middleWares = [thunk, ...middlewares]
 
 export const store = createStore(
-  // persistedReducer,
-  allReducer,
+  persistedReducer,
   // composeEnhancers(applyMiddleware(...middleWares)),
   applyMiddleware(...middleWares),
 )
